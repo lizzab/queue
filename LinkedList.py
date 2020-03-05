@@ -15,7 +15,7 @@ class ListNode:
 class SingleLinkedList:
     def __init__(self):
         self.head = None
-        self.tail = self.head
+        self.tail = None
 
     def __repr__(self):
         nodes = []
@@ -36,9 +36,8 @@ class SingleLinkedList:
     def add_tail(self, data):
         new_node = ListNode(data)
         curr = self.head
-        while curr.next:
-            curr = curr.next
-        curr.next = new_node
+        self.tail.next = new_node
+        self.tail = new_node
 
     def remove_head(self):
         new_node = self.head
